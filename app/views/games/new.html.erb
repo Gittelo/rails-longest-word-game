@@ -1,0 +1,20 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+<h1>New game</h1>
+<div>
+  <p><%= @grid.class %></p>
+  <ul class="list-inline">
+    <% @grid.each do |letter| %>
+    <li class="btn btn-danger">
+      <%= letter %>
+    </li>
+    <% end %>
+  </ul>
+  <form action="/score" method="post">
+    <%= hidden_field_tag "grid", @grid %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for="text"> What is the longest word you can find? </label>
+    <input type="text" name="attempt" placeholder="Try...">
+    <input type="submit">
+  </form>
+</div>

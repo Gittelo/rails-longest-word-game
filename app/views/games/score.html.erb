@@ -1,0 +1,17 @@
+<h1>Score</h1>
+    <p>
+      Grid:
+  <% @new_grid.each do |letter| %>
+      <%= letter + ","  %>
+
+  <% end %>
+      </p>
+<p>
+  <%="Attempt:" + @attempt + ".  " %>
+</p>
+<p> <%= @result %> </p>
+<p>
+<%= link_to "Go back", new_path %>
+</p>
+
+
